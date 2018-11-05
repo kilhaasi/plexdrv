@@ -1,22 +1,22 @@
 # docker-plexdrive
 
-Docker image for running [plexdrive](https://github.com/dweidenfeld/plexdrive)
+Docker image for running [plexdrive](https://github.com/kilhaasi/plexdrv)
 
 
 ## Usage
 
 ```yaml
-version: '3'
+version: '2'
 
 services:
   plexdrive:
-    container_name: plexdrive
-    image: wiserain/plexdrive
+    container_name: plexdrv
+    image: kilhaasi/plexdrv
     restart: always
     network_mode: "bridge"
     volumes:
-      - ${DOCKER_ROOT}/plexdrive/config:/config
-      - /your/mounting/point:/data:shared
+      - /root/.plexdrive:/config
+      - /mnt/test:/data:shared
     privileged: true
     devices:
       - /dev/fuse
@@ -24,8 +24,8 @@ services:
       - MKNOD
       - SYS_ADMIN
     environment:
-      - PUID=<user id>
-      - PGID=<group id>
+      - PUID=0
+      - PGID=0
       - RUN_OPTS=<additional arguments for running plexdrive>
 ```
 
