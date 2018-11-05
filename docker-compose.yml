@@ -2,8 +2,8 @@ version: '2'
 
 services:
   plexdrive:
-    container_name: plexdrive
-    image: plexdrv
+    container_name: plexdrv
+    image: kilhaasi/plexdrv
     restart: always
     network_mode: "bridge"
     volumes:

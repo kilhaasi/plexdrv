@@ -1,6 +1,6 @@
 # docker-plexdrive
 
-Docker image for running [plexdrive](https://github.com/kilhaasi/plexdrv)
+Docker image for running [plexdrv](https://github.com/kilhaasi/plexdrv)
 
 
 ## Usage
