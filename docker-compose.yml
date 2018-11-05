@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  plexdrive:
+    container_name: plexdrive
+    image: plexdrv
+    restart: always
+    network_mode: "bridge"
+    volumes:
+      - /root/.plexdrive:/config
+      - /mnt/test:/data:shared
+    privileged: true
+    devices:
+      - /dev/fuse
+    cap_add:
+      - MKNOD
+      - SYS_ADMIN
+    environment:
+      - PUID=0
+      - PGID=0
