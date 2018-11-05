@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER wiserain
+MAINTAINER kilhaasi
 
 # global environment settings
 ENV PLEXDRIVE_VERSION="5.0.0"
