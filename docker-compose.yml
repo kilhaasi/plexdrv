@@ -8,7 +8,7 @@ services:
     network_mode: "bridge"
     volumes:
       - /root/.plexdrive:/config
-      - /mnt/test:/data:shared
+      - /mnt:/data:shared
     privileged: true
     devices:
       - /dev/fuse
@@ -18,3 +18,5 @@ services:
     environment:
       - PUID=0
       - PGID=0
+volumes:
+ plexdrv-cfg:
