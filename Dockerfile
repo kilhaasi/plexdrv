@@ -50,6 +50,7 @@ RUN \
  apt-get autoremove -y && \
  rm -rf /tmp/* /var/lib/{apt,dpkg,cache,log}/
 
-VOLUME /config /data /decrypted
+RUN mkdir /config /data /decrypted
+VOLUME /config /data /decrypted 
 
 ENTRYPOINT ["/init"]
