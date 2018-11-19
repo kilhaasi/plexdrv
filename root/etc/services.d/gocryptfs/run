@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+while [ ! -f "/encrypted/Video/gocryptfs.conf" ]
+do
+ echo "Waiting for gocryptfs.conf to appear..."
+ sleep 1
+done
+
+gocryptfs -fg -passfile /config/enc-pwd /encrypted/Video/ /decrypted
