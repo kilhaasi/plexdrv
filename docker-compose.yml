@@ -16,7 +16,7 @@ services:
       - MKNOD
       - SYS_ADMIN
     environment:
-      - PUID=0
-      - PGID=0
+      - PUID=42
+      - PGID=42
 volumes:
  plexdrv-cfg:
