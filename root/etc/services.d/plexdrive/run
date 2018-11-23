@@ -10,10 +10,11 @@ umask 022
 
 IFS=" " read -r -a RUN_ARRAY <<< "$RUN_OPTS"
 
-mount_command="plexdrive mount -c /config/ --cache-file=/cache/cache.bolt -v 3 --umask=0777 --chunk-size=100M --uid=$PUID --gid=$PGID -o allow_other /encrypted ${RUN_ARRAY[@]}"
+#mount_command="plexdrive mount -c /config/ --cache-file=/cache/cache.bolt -v 3 --umask=0777 --chunk-size=100M --uid=$PUID --gid=$PGID -o allow_other /encrypted ${RUN_ARRAY[@]}"
+plexdrive mount -c /config/ --cache-file=/cache/cache.bolt -v 3 --umask=0777 --chunk-size=100M --uid=$PUID --gid=$PGID -o allow_other /encrypted ${RUN_ARRAY[@]}
 
-echo "Executing => $mount_command"
+#echo "Executing => $mount_command"
 #mkdir /encrypted /decrypted
 #chmod 777 /encrypted /decrypted
-exec \
+#exec \
 	s6-setuidgid abc $mount_command
